@@ -17,7 +17,7 @@ function localMonkey(){
         package_name=com.zhixin.roav.viva   #要执行的包名
         param="--ignore-crashes --ignore-timeouts --ignore-security-exceptions --monitor-native-crashes"    #设置参数
         sleep_time=500 #等待时间500ms
-        excute_num=50    #执行事件个数，86400*0.5/3600=12小时
+        excute_num=86400    #执行事件个数，86400*0.5/3600=12小时
 
         # 判断是否存在文件夹，如果不存在，则创建
         if [ ! -d "$local_dir" ];then

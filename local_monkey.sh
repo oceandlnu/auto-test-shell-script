@@ -15,7 +15,7 @@ function localMonkey(){
 
         seed=200    #seed的值
         package_name=com.zhixin.roav.viva   #要执行的包名
-        param="--ignore-crashes --ignore-timeouts --ignore-security-exceptions --monitor-native-crashes"    #设置参数
+        param="--hprof --ignore-crashes --ignore-timeouts --ignore-security-exceptions --monitor-native-crashes"    #设置参数
         sleep_time=500 #等待时间500ms
         excute_num=86400    #执行事件个数，86400*0.5/3600=12小时
 

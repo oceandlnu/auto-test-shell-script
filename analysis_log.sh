@@ -3,17 +3,17 @@
 #自动安装apk
 function analysisLog(){
     #echo "请输入一个路径(eg:/home/ocean/Downloads):"
-    #read path
+    #read pwd_path
 
 	#获取当前路径
-	path=`pwd`
+	pwd_path=`pwd`
 
     #遍历当前目录下的所有文件和目录
-    for file in `ls $path`;do
+    for file in `ls ${pwd_path}`;do
     	file_ext=${file##*.}
     	if [ $file_ext = "log" ]
     		then
-    		# log_file=`cat ${path}/${file}`
+    		# log_file=`cat ${pwd_path}/${file}`
     		# echo ${log_file}
     		arr[0]=ANR		#无响应
     		arr[1]=CRASH		#崩溃
@@ -25,13 +25,13 @@ function analysisLog(){
     		arr[7]=Monkey" "finished	#判断monkey是否执行完成，1表示执行完，0表示执行过程中被终止
     		arr[8]=beacon" "enter
     		#speed lower
-    		# echo "Monkey-1:"`awk -v RS="@#$j" '{print gsub(/Monkey/,"&")}' ${path}/${file}`
-    		# echo "Monkey-2:"`awk '{s+=gsub(/Monkey/,"&")}END{print s}' ${path}/${file}`
+    		# echo "Monkey-1:"`awk -v RS="@#$j" '{print gsub(/Monkey/,"&")}' ${pwd_path}/${file}`
+    		# echo "Monkey-2:"`awk '{s+=gsub(/Monkey/,"&")}END{print s}' ${pwd_path}/${file}`
     		echo "${file}:"
             echo "---------------------------"
     		for (( i = 0; i < ${#arr[*]}; i++ )); do
     			#statements
-    			echo "${arr[$i]}:"`grep -o "${arr[$i]}" ${path}/${file} |wc -l`
+    			echo "${arr[$i]}:"`grep -o "${arr[$i]}" ${pwd_path}/${file} |wc -l`
     		done
     		echo "---------------------------"
     	fi

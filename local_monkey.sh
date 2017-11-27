@@ -28,7 +28,7 @@ function localMonkey(){
         adb -s ${index} shell monkey -s ${seed} -p ${package_name} ${param} -v -v -v --throttle ${sleep_time} ${excute_num} > ${local_file}
 
         # 执行完后，打开所在路径
-        nautilus ${local_path}
+        nautilus ${local_path} &
 
         # 显示所有优先级大于等于"error"的日志，并且显示日期，调用时间
         # adb logcat *:E time > $local_error_file

@@ -29,6 +29,6 @@ function pullLog(){
 
         #打开所在路径
         #sudo apt-get install nautilus
-        nautilus ${local_path}
+        nautilus ${local_path} &
     done
 }

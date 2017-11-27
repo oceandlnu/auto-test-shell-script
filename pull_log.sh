@@ -14,10 +14,21 @@ function pullLog(){
         local_viva_path=${local_path}"VIVA/${index}/VIVA_"${current_date}_${current_time}
         local_monkey_path=${local_path}"Monkey/"${index}
 
+        # 判断是否存在文件夹，如果不存在，则创建
+        if [ ! -d "${local_viva_path}" ];then
+        mkdir -p ${local_viva_path}
+        fi
+
+        # 判断是否存在文件夹，如果不存在，则创建
+        if [ ! -d "${local_monkey_path}" ];then
+        mkdir -p ${local_monkey_path}
+        fi
+
         adb -s ${index} pull ${viva_path} ${local_viva_path}    #拉取VIVA日志
         adb -s ${index} pull ${monkey_path} ${local_monkey_path}   #拉取monkey日志
 
         #打开所在路径
+        #sudo apt-get install nautilus
         nautilus ${local_path}
     done
 }

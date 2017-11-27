@@ -1,6 +1,6 @@
 #!/bin/bash
 
-path=/home/ocean/Documents/code/sh_code/
+path=/var/www/html/auto-test-shell-script/
 
 . ${path}devices_list.sh
 . ${path}install_apk.sh

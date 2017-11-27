@@ -19,6 +19,8 @@ echo "0-列出所有设备"
 echo "<CTRL+D>退出"
 echo "---------------------------"
 
+#
+adb devices>/dev/null
 #调用devicesList函数
 devicesList
 

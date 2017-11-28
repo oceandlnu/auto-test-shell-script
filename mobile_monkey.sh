@@ -2,8 +2,8 @@
 
 function mobileMonkey(){
 
-	trap "" HUP	#表明忽略SIGINT信号，按Ctrl+C也不能使脚本退出
-	trap "" INT #表明忽略SIGHUP信号，即网络断开时也不能使脚本退出
+	# trap "" HUP	#表明忽略SIGINT信号，按Ctrl+C也不能使脚本退出
+	# trap "" INT #表明忽略SIGHUP信号，即网络断开时也不能使脚本退出
 
 	current_time=`date +%H%M%S`	#当前时间
 	current_date=`date +%Y-%m-%d`	#当前日期
@@ -27,7 +27,7 @@ function mobileMonkey(){
 	fi
 
 	# 执行monkey脚本
-	monkey -s ${seed} -p ${package_name} ${param} -v -v -v --throttle ${sleep_time} ${excute_num} > ${mobile_file} &
+	monkey -s ${seed} -p ${package_name} ${param} -v -v -v --throttle ${sleep_time} ${excute_num} > ${mobile_file}
 
 	# 杀死指定pid的进程
 	# adb shell kill pid
@@ -35,3 +35,6 @@ function mobileMonkey(){
 	# 强制停止monkey测试
 	# adb shell ps | awk '/com\.android\.commands\.monkey/ { system("adb shell kill " $2) }'
 }
+
+#调用函数执行monkey
+mobileMonkey

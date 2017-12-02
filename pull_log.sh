@@ -25,6 +25,7 @@ function pullLog(){
         fi
 
         adb -s ${index} pull ${viva_path} ${local_viva_path}    #拉取VIVA日志
+
         adb -s ${index} pull ${monkey_path} ${local_monkey_path}   #拉取monkey日志
 
         #打开所在路径

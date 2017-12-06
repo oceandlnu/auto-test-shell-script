@@ -19,15 +19,25 @@ function pullLog(){
 
         # 判断是否存在文件夹，如果不存在，则创建
         if [ ! -d "${local_path}" ];then
-        mkdir -p "${local_path}"
+            mkdir -p "${local_path}"
         fi
-        
+
         adb -s ${index} pull ${viva_path} "${local_path}"    #拉取VIVA日志
 
         adb -s ${index} pull ${monkey_path} "${local_path}"   #拉取monkey日志
 
+        cd "${local_path}"
+        #打包为zip压缩包
+        zip -r "VIVA.zip" "VIVA"
+
         #打开所在路径
-        #sudo apt-get install nautilus
-        nautilus "${local_path}" &
+        if command -v nautilus >/dev/null 2>&1; then
+            nautilus "${local_path}" & 
+        else
+            #如果没有nautilus命令，则先安装
+            sudo apt-get install nautilus
+            nautilus "${local_path}" &
+        fi
+        
     done
 }

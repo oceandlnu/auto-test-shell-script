@@ -14,6 +14,7 @@ function pullLog(){
         mobile_name=`adb -s ${index} shell getprop ro.product.model`
         # adb -s ${index} shell getprop ro.build.version.release
 
+        #本地日志存放目录
         local_path=/home/${user_name}/Downloads/Android_log/"${mobile_name}/${current_date}_${current_time}"
 
         # 判断是否存在文件夹，如果不存在，则创建
@@ -27,6 +28,6 @@ function pullLog(){
 
         #打开所在路径
         #sudo apt-get install nautilus
-        # nautilus ${local_path} &
+        nautilus "${local_path}" &
     done
 }

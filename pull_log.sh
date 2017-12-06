@@ -35,9 +35,9 @@ function pullLog(){
             nautilus "${local_path}" & 
         else
             #如果没有nautilus命令，则先安装
-            sudo apt-get install nautilus
-            nautilus "${local_path}" &
+            echo "not exists command with --nautilus,please install take 'sudo apt install nautilus'"
+            # sudo apt install nautilus
+            # nautilus "${local_path}" &
         fi
-        
     done
 }

@@ -12,12 +12,12 @@ sudo ln -s ${path}tools.sh /usr/bin/tools
 
 ### 主要功能：
 
-1-安装当前目录所有apk文件
+1.install current director .apk
 
-2-执行monkey
+2.exec monkey test
 
-3-pull log到本地
+3.pull_log -> /home/user/Android_log
 
-4-分析当前目录log(ANR,Exception)
+4.analysis current director .log(ANR,Exception)
 
-5-列出所有设备
+5.display connected mobile list

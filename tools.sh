@@ -9,12 +9,12 @@ path=/var/www/html/auto-test-shell-script/
 . ${path}analysis_log.sh
 
 echo "---------------------------"
-echo "1-安装当前目录所有apk文件"
-echo "2-执行monkey"
-echo "3-pull log到本地"
-echo "4-分析当前目录log(ANR,Exception)"
-echo "5-列出所有设备"
-echo "<CTRL+D>退出"
+echo "1.install current director .apk"
+echo "2.exec monkey test"
+echo "3.pull_log->/home/user/Android_log"
+echo "4.analysis current director .log(ANR,Exception)"
+echo "5.display connected mobile list"
+echo "exit: ctrl + d"
 echo "---------------------------"
 
 #初始化设备列表
@@ -48,18 +48,18 @@ do
             devicesList
             ;;
         * )
-            echo "输入错误，请重新输入，或按<CTRL+D>退出!"
+            echo "输入错误，请重新输入，或按ctrl+d退出!"
             ;;
     esac
     
-    read -p "请按任意键继续..." var
+    read -p "按任意键继续..." var
     clear
     echo "---------------------------"
-    echo "1-安装当前目录所有apk文件"
-    echo "2-执行monkey"
-    echo "3-pull log到本地"
-    echo "4-分析当前目录log(ANR,Exception)"
-    echo "5-列出所有设备"
-    echo "<CTRL+D>退出"
+    echo "1.install current director .apk"
+    echo "2.exec monkey test"
+    echo "3.pull_log->/home/user/Android_log"
+    echo "4.analysis current director .log(ANR,Exception)"
+    echo "5.display connected mobile list"
+    echo "exit: ctrl + d"
     echo "---------------------------"
 done

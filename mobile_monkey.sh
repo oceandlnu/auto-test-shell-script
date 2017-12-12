@@ -31,7 +31,7 @@ function mobileMonkey(){
 
 	# 杀死指定pid的进程
 	# adb shell kill pid
-	
+
 	# 强制停止monkey测试
 	# adb shell ps | awk '/com\.android\.commands\.monkey/ { system("adb shell kill " $2) }'
 }

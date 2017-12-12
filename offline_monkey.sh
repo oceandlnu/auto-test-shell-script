@@ -6,7 +6,7 @@ function offlineMonkey(){
 
         mobile_path=/sdcard/mobile_monkey.sh
         file_name=${path}mobile_monkey.sh
-        
+
         #清除原来的文件，如果存在
         adb -s ${index} shell rm -rf ${mobile_path}
         #将脚本push到手机上
@@ -28,6 +28,6 @@ function offlineMonkey(){
 
         #当开始执行后，查看是否有sh进程，如果有，拔掉数据线，接着后续的就能够离线运行。
         adb -s ${index} shell ps | grep shell
-        
+
     done
 }

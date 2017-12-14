@@ -13,8 +13,9 @@ function devicesList() {
     while [[ ${devices_num} ]]; do
         #表示从右边开始，删除最后（最左边）一个device字符串及右边的字符
         arr_num[$i]=${devices_num%%device*}
+        device_name=`adb -s ${arr_num[$i]} shell getprop ro.product.model`"_"`adb -s ${arr_num[$i]} shell getprop ro.build.version.release`
         #打印验证是否正确过滤
-        echo "设备${i}:${arr_num[$i]}"
+        echo "${device_name}:${arr_num[$i]}"
         let "i++"
         #表示从左边开始删除第一个device字符串及左边的所有字符
         devices_num=${devices_num#*device}

@@ -18,6 +18,6 @@ sudo ln -s ${path}tools.sh /usr/bin/tools
 
 3.pull_log -> /home/user/Android_log
 
-4.analysis current director .log(ANR,Exception)
+4.filter current director .log file
 
 5.display connected mobile list

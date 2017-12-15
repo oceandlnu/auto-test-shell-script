@@ -11,9 +11,8 @@ function pullLog(){
         monkey_path=/sdcard/monkey_log/ #monkey log的路径
 
         user_name=`whoami`
-        mobile_name=`adb -s ${index} shell getprop ro.product.model`"_"`adb -s ${index} shell getprop ro.build.version.release`
-#        mobile_name=`sed 's/\n//g' | sed 's/\r//g' | sed 's/\r\n//g'` "${mobile_name1}"
-        # adb -s ${index} shell getprop ro.build.version.release
+        temp_name=`adb -s ${index} shell getprop ro.product.model`_`adb -s ${index} shell getprop ro.build.version.release`
+        mobile_name=`echo "${temp_name}" | sed 's/\s//g'`
 
         #本地日志存放目录
         local_path=/home/${user_name}/Downloads/Android_log/"${mobile_name}/${current_date}_${current_time}"
@@ -33,7 +32,7 @@ function pullLog(){
 
         #打开所在路径
         if command -v nautilus >/dev/null 2>&1; then
-            nautilus "${local_path}" > /dev/null 2>&1
+            nautilus "${local_path}" > /dev/null 2>&1 &
         else
             #如果没有nautilus命令，则先安装
             echo "not exists command with --nautilus,please install take 'sudo apt install nautilus'"

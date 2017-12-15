@@ -33,7 +33,7 @@ function pullLog(){
 
         #打开所在路径
         if command -v nautilus >/dev/null 2>&1; then
-            nautilus "${local_path}" &
+            nautilus "${local_path}" > /dev/null 2>&1
         else
             #如果没有nautilus命令，则先安装
             echo "not exists command with --nautilus,please install take 'sudo apt install nautilus'"

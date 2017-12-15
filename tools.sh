@@ -12,9 +12,9 @@ echo "---------------------------"
 echo "1.install current director .apk"
 echo "2.exec monkey test"
 echo "3.pull_log->/home/user/Android_log"
-echo "4.analysis current director .log(ANR,Exception)"
+echo "4.filter current director .log file"
 echo "5.display connected mobile list"
-echo "exit: ctrl + d"
+echo "(ctrl+d to exit)"
 echo "---------------------------"
 
 #初始化设备列表
@@ -51,15 +51,15 @@ do
             echo "输入错误，请重新输入，或按ctrl+d退出!"
             ;;
     esac
-    
-    read -p "按任意键继续..." var
-    clear
+
+    # read -p "按任意键继续..." var
+    # clear
     echo "---------------------------"
     echo "1.install current director .apk"
     echo "2.exec monkey test"
     echo "3.pull_log->/home/user/Android_log"
-    echo "4.analysis current director .log(ANR,Exception)"
+    echo "4.filter current director .log file"
     echo "5.display connected mobile list"
-    echo "exit: ctrl + d"
+    echo "(ctrl+d to exit)"
     echo "---------------------------"
 done

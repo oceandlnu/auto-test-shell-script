@@ -23,7 +23,8 @@ function analysisLog(){
             arr[8]="beacon enter"
             echo "-------------------------------"
             echo "文件名:${line}"
-            grep -n "${keywords}" "${line}"
+            # grep -n "${keywords}" "${line}"
+            grep "${keywords}" "${line}"
         done
         read -p "按任意键继续..." var
         clear

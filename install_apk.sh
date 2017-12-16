@@ -11,15 +11,16 @@ function installAPK(){
     package_name=com.zhixin.roav.viva
 
     for index in ${arr_num[*]}; do
-        # echo $index
         #遍历当前目录下的所有文件和目录
+        device_temp_name=`adb -s ${index} shell getprop ro.product.model`_`adb -s ${index} shell getprop ro.build.version.release`
+        device_name=`echo "${device_temp_name}" | sed 's/\s//g'`
         for file in `ls ${pwd_path}`;do
             file_ext=${file##*.}
             if [ $file_ext = "apk" ]
                 then
-                echo "${index}开始卸载..."
+                echo "${device_name} 开始卸载..."
                 adb -s ${index} uninstall ${package_name}
-                echo "${index}开始安装..."
+                echo "${device_name} 开始安装..."
                 adb -s ${index} install ${pwd_path}/${file}
             fi
             # echo $file

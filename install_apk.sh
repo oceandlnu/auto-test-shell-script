@@ -8,7 +8,8 @@ function installAPK(){
     #获取当前路径
     pwd_path=`pwd`
     #app包名
-    package_name=com.zhixin.roav.viva
+    # package_name=com.zhixin.roav.viva
+    package_name=com.zhixin.roav.charger.viva
 
     for index in ${arr_num[*]}; do
         #遍历当前目录下的所有文件和目录
@@ -21,7 +22,7 @@ function installAPK(){
                 echo "${device_name} 开始卸载..."
                 adb -s ${index} uninstall ${package_name}
                 echo "${device_name} 开始安装..."
-                adb -s ${index} install ${pwd_path}/${file}
+                adb -s ${index} install -r ${pwd_path}/${file}
             fi
             # echo $file
         done
